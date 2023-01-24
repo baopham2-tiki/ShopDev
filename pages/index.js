@@ -3,8 +3,10 @@ import styles from "@/styles/Home.module.scss";
 import Footer from "../components/footer/index";
 import axios from "axios";
 import db from "../utils/db";
+import { useSession, signIn, signOut } from "next-auth/react";
 export default function Home({ country }) {
-  console.log(country);
+  const { data: session } = useSession();
+  console.log(session);
   return (
     <div>
       <Header country={country} />

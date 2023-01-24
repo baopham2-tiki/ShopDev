@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 export default function UserMenu({ loggedIn }) {
   return (
     <div className={styles.menu}>
-      <h4>Wellcome to ShopDev</h4>
+      <h4>Wellcome to Shop Baro</h4>
       {loggedIn ? (
         <div className={styles.flex}>
           <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png" alt="" className={styles.menu__img} />

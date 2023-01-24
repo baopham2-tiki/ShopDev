@@ -7,7 +7,7 @@ import UserMenu from "./UserMenu";
 import Link from "next/link";
 
 export default function Top({ country }) {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [visible, setVisible] = useState(false);
   return (
     <div className={styles.top}>
