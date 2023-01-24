@@ -16,8 +16,8 @@ export default function UserMenu({ loggedIn }) {
         </div>
       ) : (
         <div className={styles.flex}>
-          <button>Register</button>
-          <button>Login</button>
+          <button className={styles.btn_primary}>Register</button>
+          <button className={styles.btn_outlined}>Login</button>
         </div>
       )}
       <ul>
