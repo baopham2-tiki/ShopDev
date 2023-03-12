@@ -17,7 +17,7 @@ export default function Top({ country }) {
         <ul className={styles.top__list}>
           <li className={styles.li}>
             <img src={country?.flag} alt="" />
-            <span>{country?.name} / usd</span>
+            <span>{country ? country?.name : "Viet Nam"} / usd</span>
           </li>
           <li className={styles.li}>
             <MdSecurity />
