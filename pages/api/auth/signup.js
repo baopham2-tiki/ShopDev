@@ -1,11 +1,11 @@
 import nc from "next-connect";
 import bcrypt from "bcrypt";
-import { validateEmail } from "@/utils/validation";
+import { validateEmail } from "../../../utils/validation";
 import db from "../../../utils/db";
 import User from "../../../models/User";
-import { createActivationToken } from "@/utils/tokens";
-import { sendEmail } from "@/utils/sendEmails";
-import { activateEmailTemplate } from "@/emails/activateEmailTemplate";
+import { createActivationToken } from "../../../utils/tokens";
+import { sendEmail } from "../../../utils/sendEmails";
+import { activateEmailTemplate } from "../../../emails/activateEmailTemplate";
 const handler = nc();
 
 handler.post(async (req, res) => {
@@ -23,7 +23,9 @@ handler.post(async (req, res) => {
       return res.status(400).json({ message: "This email already exsits." });
     }
     if (password.length < 6) {
-      return res.status(400).json({ message: "Password must be atleast 6 characters." });
+      return res
+        .status(400)
+        .json({ message: "Password must be atleast 6 characters." });
     }
     const cryptedPassword = await bcrypt.hash(password, 12);
     const newUser = new User({ name, email, password: cryptedPassword });
