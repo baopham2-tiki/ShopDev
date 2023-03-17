@@ -7,8 +7,8 @@ export default function Copyright({ country }) {
       <section>©2022 SHOPPAY All Rights Resereved.</section>
       <section>
         <ul>
-          {data.map((link, index) => (
-            <li key={index}>
+          {data.map((link) => (
+            <li>
               <Link href={link.link}>{link.name}</Link>
             </li>
           ))}
